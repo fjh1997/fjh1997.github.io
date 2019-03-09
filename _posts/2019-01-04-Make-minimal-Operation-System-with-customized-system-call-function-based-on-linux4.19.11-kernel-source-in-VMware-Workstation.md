@@ -2,7 +2,7 @@
 layout:     post                    # 使用的布局（不需要改）
 title:      Make minimal Operation System with customized system call function based on linux4.19.11 kernel source in VMware Workstation  # 标题 
 subtitle:   step by step #副标题
-date:       2018-01-04              # 时间
+date:       2019-01-04              # 时间
 author:     fjh1997                 # 作者
 header-img: img/bootlog.png         #这篇文章标题背景图片
 catalog: true                       # 是否归档

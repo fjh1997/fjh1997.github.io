@@ -2,7 +2,7 @@
 layout:     post                    # 使用的布局（不需要改）
 title:      solution to the problem that Screen only shows partial area on hackintosh 10.14 Mojave  # 标题 
 subtitle:   with clover configuration #副标题
-date:       2018-03-08              # 时间
+date:       2019-03-08              # 时间
 author:     fjh1997                 # 作者
 header-img: img/Mojave.JPG    #这篇文章标题背景图片
 catalog: true                       # 是否归档
