@@ -4,7 +4,7 @@ title:      the windows/macos network wake-up solution  # 标题
 subtitle:   Learning the shell script's tread #副标题
 date:       2019-03-08              # 时间
 author:     fjh1997                 # 作者
-header-img: img/Dual-Screen.jpg     #这篇文章标题背景图片
+header-img: img/DualScreen.jpg     #这篇文章标题背景图片
 catalog: true                       # 是否归档
 tags:                               #标签
     - Wake On Lan
