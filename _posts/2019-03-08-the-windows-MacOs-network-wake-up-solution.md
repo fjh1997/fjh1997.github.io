@@ -15,7 +15,7 @@ tags:                               #标签
 
 ## problem to solve
 
-I am studying at a university in China, and the network and electricity of the dormitory are often severely restricted. For example, at 11:30 on weekdays, the network and electricity must be off on time, which prevents me  remotely waking up my computer through the network card.  (The NVRAM information of the network card will be lost after power off, you need to power on and restart once to reconfigure NVRAM)。 but  since it‘s inconvenient get up every morning to open the computer just for this. It is better to let it start automatically when the power is restored every morning. However, the problem is coming again.  It is unnecessary to keep the computer on when nobody uses it. So I should make the computer  automatically shutdown for the first time power on every day.
+I am studying at a university in China, and the network and electricity of the dormitory are often severely restricted. For example, at 11:30 on weekdays, the network and electricity must be off on time, which prevents me  remotely waking up my computer through the network card.  (The NVRAM information of the network card will be lost after power off, you need to power on and restart once to reconfigure NVRAM)。 but  since it‘s inconvenient get up every morning to open the computer just for this. It is better to let it start automatically when the power is restored every morning. However, the problem is coming again.  It is unnecessary to keep the computer on when nobody uses it. So I should make the computer  automatically shutdown for the first time power on every day(except for sunday and saturday).
 ## solution
 ### 0.prerequisites 
 <br>1.a computer that supports Wake on LAN
@@ -61,9 +61,13 @@ windows：shutdown.bat
 ```bat
 for /f "delims=" %%t in ('type date.log') do set str=%%t
 if "%str%"=="%date%" (echo "haha"
-) else ( 
+echo %date:~-2%
+) else ( if NOT %date:~-2%==周六 (
+if NOT %date:~-2%==周日 (
 >date.log echo %date%
 C:\Windows\System32\shutdown.exe -s -t 10
+)
+)
 )
 pause
 ```
