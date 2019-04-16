@@ -62,8 +62,8 @@ windows：shutdown.bat
 for /f "delims=" %%t in ('type date.log') do set str=%%t
 if "%str%"=="%date%" (echo "haha"
 echo %date:~-2%
-) else ( if NOT %date:~-2%==周六 (
-if NOT %date:~-2%==周日 (
+) else ( if NOT %date:~-2%==Saturday (
+if NOT %date:~-2%==Sunday (
 >date.log echo %date%
 C:\Windows\System32\shutdown.exe -s -t 10
 )
