@@ -83,7 +83,56 @@ and my conf file is like these:
   ]
 }
 ```
-
+<br>client(insecure if you have trouble with ssl)
+```js
+{
+  "inbounds": [
+    {
+      "port": 1091,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls"]
+      },
+      "settings": {
+        "auth": "noauth",
+        "udp": false
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "vmess",
+      "settings": {
+        "vnext": [
+          {
+            "address": "yourdomain",
+            "port": 443,
+            "users": [
+              {
+                "id": "youruuid",
+                "alterId": 64
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "tlsSettings": {
+          "allowInsecure": true,
+          "serverName": null
+        },
+          "wsSettings": { 
+          "path": "/yourpath"
+        }
+      }
+    }
+  ]
+}
+```
 v2ray server:
 ```js
 {
@@ -142,7 +191,7 @@ server {
   server_name           yourdomain;
         location /yourpath { # . V2Ray .... path ....
         proxy_redirect off;
-        proxy_pass http://127.0.0.1:19706
+        proxy_pass http://127.0.0.1:19706;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
@@ -154,5 +203,10 @@ server {
         }
 }
 
+
+```
+also if you faild time sync with ntp,you can use command follow in crontab
+```bash
+sudo date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z"
 
 ```
