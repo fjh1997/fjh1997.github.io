@@ -64,6 +64,7 @@ gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: e0b4c6c675803d5ea3f4                           #生成的clientID
   clientSecret: 85d7f6e9aea67e246ee6998b8ef21c07ae7dc645    #生成的clientSecret
+  accessToken: 58201fe0dda7a97b69e95a5531ce384649a5018b 
   repo: fjh1997.github.io    #仓库名称
   owner: fjh1997    #github用户名
   admin: fjh1997
