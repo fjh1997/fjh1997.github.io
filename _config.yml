@@ -1,6 +1,6 @@
 # Site settings
-title: 傅守一
-SEOTitle: Blog of fjh1997 | 傅守一
+title: fjh1997
+SEOTitle: Blog of fjh1997
 header-img: img/NorwayPool.jpg
 email: fjhhz1997@gmail.com
 description: "God don't move that mountain,instead let me to climb."
@@ -39,7 +39,7 @@ anchorjs: true                          # if you want to customize anchor. check
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 
 
 
